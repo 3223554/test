@@ -28,8 +28,15 @@ namespace Demo
             {
                 endpoints.MapPost("/customer/{customerid}/score/{score}", async context =>
                 {
-                    var customerId = long.Parse(context.Request.RouteValues["customerid"].ToString());
-                    var score = decimal.Parse(context.Request.RouteValues["score"].ToString());
+                    var customerIdString = context.Request.RouteValues["customerid"].ToString();
+                    var scoreString = context.Request.RouteValues["score"].ToString();
+
+                    if (!long.TryParse(customerIdString, out long customerId) || !decimal.TryParse(scoreString, out decimal score))
+                    {
+                        context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                        await context.Response.WriteAsync("Invalid input parameters.");
+                        return;
+                    }
 
                     var updatedScore = leaderboardService.UpdateScore(customerId, score);
 
@@ -38,8 +45,15 @@ namespace Demo
 
                 endpoints.MapGet("/leaderboard", async context =>
                 {
-                    var start = int.Parse(context.Request.Query["start"]);
-                    var end = int.Parse(context.Request.Query["end"]);
+                    var startString = context.Request.Query["start"];
+                    var endString = context.Request.Query["end"];
+
+                    if (!int.TryParse(startString, out int start) || !int.TryParse(endString, out int end))
+                    {
+                        context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                        await context.Response.WriteAsync("Invalid input parameters.");
+                        return;
+                    }
 
                     var customers = leaderboardService.GetCustomersByRank(start, end);
 
@@ -48,9 +62,18 @@ namespace Demo
 
                 endpoints.MapGet("/leaderboard/{customerid}", async context =>
                 {
-                    var customerId = long.Parse(context.Request.RouteValues["customerid"].ToString());
-                    var high = int.Parse(context.Request.Query["high"]);
-                    var low = int.Parse(context.Request.Query["low"]);
+                    var customerIdString = context.Request.RouteValues["customerid"].ToString();
+                    var highString = context.Request.Query["high"];
+                    var lowString = context.Request.Query["low"];
+
+                    if (!long.TryParse(customerIdString, out long customerId) ||
+                        !int.TryParse(highString, out int high) ||
+                        !int.TryParse(lowString, out int low))
+                    {
+                        context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                        await context.Response.WriteAsync("Invalid input parameters.");
+                        return;
+                    }
 
                     var customers = leaderboardService.GetCustomersByCustomerId(customerId, high, low);
 
@@ -58,7 +81,7 @@ namespace Demo
                 });
             });
 
-            var testMain = app.ApplicationServices.GetService<TestMain>();
+            //var testMain = app.ApplicationServices.GetService<TestMain>();
             //await testMain.RunConcurrentTest();
 
         }
