@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{0A97BA25-A8F7-4F8E-BA86-2B90AAA37E13}|http">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Demo/Service/LeaderboardService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Demo/Startup.cs">
     <Files>
       <File FileName="Demo/Program.cs" Line="21" Column="32" />
-      <File FileName="Demo/Model/Customer.cs" Line="21" Column="6" />
-      <File FileName="Demo/Service/LeaderboardService.cs" Line="23" Column="27" />
+      <File FileName="Demo/Model/Customer.cs" />
+      <File FileName="Demo/Service/LeaderboardService.cs" Line="14" Column="46" />
       <File FileName="Demo/Startup.cs" Line="62" Column="15" />
-      <File FileName="Demo/appsettings.json" Line="1" Column="1" />
-      <File FileName="Demo/Test/TestMain.cs" Line="57" Column="79" />
+      <File FileName="Demo/appsettings.json" />
+      <File FileName="Demo/Test/TestMain.cs" Line="60" Column="16" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,10 +15,9 @@
           <Node name="Demo" expanded="True">
             <Node name="Demo" expanded="True">
               <Node name="Model" expanded="True" />
-              <Node name="Service" expanded="True">
-                <Node name="LeaderboardService.cs" selected="True" />
-              </Node>
+              <Node name="Service" expanded="True" />
               <Node name="Test" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>

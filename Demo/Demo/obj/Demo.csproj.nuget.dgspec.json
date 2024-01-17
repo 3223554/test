@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/zhaochongjing/Projects/TestDemo/Demo/Demo/Demo.csproj": {}
+    "/Users/zhaochongjing/Projects/mianshi/Demo/Demo/Demo.csproj": {}
   },
   "projects": {
-    "/Users/zhaochongjing/Projects/TestDemo/Demo/Demo/Demo.csproj": {
+    "/Users/zhaochongjing/Projects/mianshi/Demo/Demo/Demo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/zhaochongjing/Projects/TestDemo/Demo/Demo/Demo.csproj",
+        "projectUniqueName": "/Users/zhaochongjing/Projects/mianshi/Demo/Demo/Demo.csproj",
         "projectName": "Demo",
-        "projectPath": "/Users/zhaochongjing/Projects/TestDemo/Demo/Demo/Demo.csproj",
+        "projectPath": "/Users/zhaochongjing/Projects/mianshi/Demo/Demo/Demo.csproj",
         "packagesPath": "/Users/zhaochongjing/.nuget/packages/",
-        "outputPath": "/Users/zhaochongjing/Projects/TestDemo/Demo/Demo/obj/",
+        "outputPath": "/Users/zhaochongjing/Projects/mianshi/Demo/Demo/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
